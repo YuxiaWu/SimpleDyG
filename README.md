@@ -14,11 +14,11 @@ The package can be installed by running the following command.
 
 ## Benchmark Datasets and Preprocessing
 
-UCI and  ML-10M: the raw-data is the same with  https://github.com/aravindsankar28/DySAT
+- UCI and  ML-10M: the raw-data is the same with  https://github.com/aravindsankar28/DySAT
 
-Hepth: The dataset can be download from the kddcup:  https://www.cs.cornell.edu/projects/kddcup/datasets.html
+- Hepth: The dataset can be download from the kddcup:  https://www.cs.cornell.edu/projects/kddcup/datasets.html
 
-MMConv: we provide the raw data is downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in "all/data/dialog"
+- MMConv: we provide the raw data is downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in "all/data/dialog"
 
 All the datasets and preprocessing code is in folder "/all_data". For each dataset, run:
 
@@ -39,15 +39,15 @@ We provide the final processed data of UCI for runing our model.
 
 Will obtain the following output files:
 
-./tokenizers: the tokenizers for each timestamp
+- ./tokenizers: the tokenizers for each timestamp
 
-./vocabs: the vocab for each timestamp
+- ./vocabs: the vocab for each timestamp
 
-./output: the checkpoint 
+- ./output: the checkpoint 
 
-./results: the output results and metrics 
+- ./results: the output results and metrics 
 
-./runs: the tensorboard results
+- ./runs: the tensorboard results
 
 
 ## Evaluation 
