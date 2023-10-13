@@ -25,9 +25,13 @@ The final data is saved in:  ./resources. including the train/val/test data
 Will obtain the following output files:
 
 ./tokenizers: the tokenizers for each timestamp
+
 ./vocabs: the vocab for each timestamp
+
 ./output: the checkpoint 
+
 ./results: the output results and metrics 
+
 ./runs: the tensorboard results
 
 
