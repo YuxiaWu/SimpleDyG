@@ -22,9 +22,7 @@ The package can be installed by running the following command.
 
 - MMConv: we provide the raw data downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in "all/data/dialog"
 
-Let's do preprocessing!
-
-All the datasets and preprocessing code are in folder "/all_data". For each dataset, run:
+Let's do preprocessing! All the datasets and preprocessing code are in folder "/all_data". For each dataset, run:
 
 `python preprocess.py ` 
 
