@@ -31,7 +31,9 @@ Transfer the preprocessed data into sequences for Transformer model:
 
 `bash csv2res.sh`
 
-The final data is saved in:  ./resources. including the train/val/test data
+The final data is saved in:  ./resources. including the train/val/test data.
+
+We provide the final processed data of UCI for runing our model.
 
 ## Train the model 
 
