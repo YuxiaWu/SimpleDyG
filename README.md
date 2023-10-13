@@ -1,12 +1,13 @@
 
 
-##  Requirements:
+## Requirements and Installation
 
-python=3.9
 
-pytorch=1.9.1
+python>=3.9
 
-transformers=4.24.0
+pytorch>=1.9.1
+
+transformers>=4.24.0
 
 The package can be installed by running the following command.
 
