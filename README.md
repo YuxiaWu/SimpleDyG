@@ -46,13 +46,13 @@ We provide the final processed data of UCI for running our model.
 
 `bash train_UCI_13.sh`
 
-Will obtain the following output files:
+During training, the following output files are generated:
 
 - ./tokenizers: the tokenizers for each timestamp
 
 - ./vocabs: the vocab for each timestamp
 
-- ./output: the checkpoint 
+- ./output: the saved checkpoint of the model
 
 - ./results: the output results and metrics 
 
