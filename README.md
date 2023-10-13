@@ -2,9 +2,9 @@
 
 ##  Requirements:
 
-python 3.9
+python=3.9
 
-pytorch 1.9.1
+pytorch=1.9.1
 
 transformers=4.24.0
 
