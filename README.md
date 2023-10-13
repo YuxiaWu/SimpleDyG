@@ -14,24 +14,28 @@ The package can be installed by running the following command.
 
 ## Benchmark Datasets and Preprocessing
 
-- UCI and  ML-10M: the raw-data is the same with  https://github.com/aravindsankar28/DySAT
+# raw data
 
-- Hepth: The dataset can be download from the kddcup:  https://www.cs.cornell.edu/projects/kddcup/datasets.html
+- UCI and  ML-10M: the raw data is the same with  https://github.com/aravindsankar28/DySAT
 
-- MMConv: we provide the raw data is downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in "all/data/dialog"
+- Hepth: The dataset can be downloaded from the KDD cup:  https://www.cs.cornell.edu/projects/kddcup/datasets.html
 
-All the datasets and preprocessing code is in folder "/all_data". For each dataset, run:
+- MMConv: we provide the raw data downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in "all/data/dialog"
+
+Let's do preprocessing!
+
+All the datasets and preprocessing code are in folder "/all_data". For each dataset, run:
 
 `python preprocess.py ` 
 
 
-Transfer the preprocessed data into sequences for Transformer model: 
+Transfer the preprocessed data into sequences for the Transformer model: 
 
 `bash csv2res.sh`
 
-The final data is saved in:  ./resources. including the train/val/test data.
+The final data is saved in  ./resources. including the train/val/test data.
 
-We provide the final processed data of UCI for runing our model.
+We provide the final processed data of UCI for running our model.
 
 ## Train the model 
 
