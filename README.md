@@ -15,30 +15,32 @@ The package can be installed by running the following command.
 
 ## Benchmark Datasets and Preprocessing
 
-Raw data:
+#### Raw data:
 
 - UCI and  ML-10M: the raw data is the same with  https://github.com/aravindsankar28/DySAT
 
 - Hepth: The dataset can be downloaded from the KDD cup:  https://www.cs.cornell.edu/projects/kddcup/datasets.html
 
-- MMConv: we provide the raw data downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in "all/data/dialog"
+- MMConv: we provide the raw data downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in `all/data/dialog`
 
-Let's do preprocessing! All the datasets and preprocessing code are in folder `/all_data`. For each dataset, run:
+#### Let's do preprocessing! 
+
+All the datasets and preprocessing code are in folder `/all_data`. For each dataset, run:
 
 `python preprocess.py ` 
 
 
 The preprocessed data contains:
 
-- ml_dataname.csv: the columns: u, i is the node id. ts is the time point. timestamp is the coarse-grained time steps for temporal alignment.
-- ml_dataname.npy: the raw link feature. 
-- ml_dataname_node.npy: the raw node feature. 
+- `ml_dataname.csv`: the columns: u, i is the node id. ts is the time point. timestamp is the coarse-grained time steps for temporal alignment.
+- `ml_dataname.npy`: the raw link feature. 
+- `ml_dataname_node.npy`: the raw node feature. 
 
 Transfer the preprocessed data into sequences for the Transformer model: 
 
 `bash csv2res.sh`
 
-The final data is saved in  ./resources. including the train/val/test data.
+The final data is saved in  `./resources`. including the train/val/test data.
 
 We provide the final processed data of UCI for running our model.
 
@@ -48,15 +50,15 @@ We provide the final processed data of UCI for running our model.
 
 During training, the following output files are generated:
 
-- ./tokenizers: the tokenizers for each timestamp
+- `./tokenizers`: the tokenizers for each timestamp
 
-- ./vocabs: the vocab for each timestamp
+- `./vocabs`: the vocab for each timestamp
 
-- ./output: the saved checkpoint of the model
+- `./output`: the saved checkpoint of the model
 
-- ./results: the output results and metrics 
+- `./results`: the output results and metrics 
 
-- ./runs: the tensorboard results
+- `./runs`: the tensorboard results
 
 
 ## Evaluation 
