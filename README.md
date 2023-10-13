@@ -6,6 +6,11 @@ python 3.9
 
 pytorch 1.9.1
 
+transformers=4.24.0
+
+The package can be installed by running the following command.
+
+`pip install -r requirements.txt`
 
 ## Benchmark Datasets and Preprocessing
 
