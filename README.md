@@ -29,6 +29,12 @@ All the datasets and preprocessing code are in folder "/all_data". For each data
 `python preprocess.py ` 
 
 
+The preprocessed data contains:
+
+- ml_dataname.csv: the columns: u, i is the node id. ts is the time point. timestamp is the coarse-grained time steps for temporal alignment.
+- ml_dataname.npy: the raw link feature. 
+- ml_dataname_node.npy: the raw node feature. 
+
 Transfer the preprocessed data into sequences for the Transformer model: 
 
 `bash csv2res.sh`
