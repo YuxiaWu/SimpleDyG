@@ -22,7 +22,6 @@ Hepth: The dataset can be download from the kddcup:  https://www.cs.cornell.edu/
 
 MMConv: we provide the raw data is downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in "all/data/dialog"
 
-
 All the datasets and preprocessing code is in folder "/all_data". For each dataset, run:
 
 `python preprocess.py ` 
