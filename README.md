@@ -1,6 +1,8 @@
+# SimpleDyG
+
 The code and datasets used for our paper "On the Feasibility of Simple Transformer for Dynamic Graph Modeling" which is accepted by WWW 2024.
 
-## Requirements and Installation
+# Requirements and Installation
 
 
 python>=3.9
@@ -13,9 +15,9 @@ The package can be installed by running the following command.
 
 `pip install -r requirements.txt`
 
-## Benchmark Datasets and Preprocessing
+# Benchmark Datasets and Preprocessing
 
-#### Raw data:
+## Raw data:
 
 - UCI and  ML-10M: the raw data is the same with  https://github.com/aravindsankar28/DySAT
 
@@ -23,7 +25,7 @@ The package can be installed by running the following command.
 
 - MMConv: we provide the raw data downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in `all/data/dialog`
 
-#### Let's do preprocessing! 
+## Let's do preprocessing! 
 
 All the datasets and preprocessing code are in folder `/all_data`. For each dataset, run:
 
@@ -44,7 +46,7 @@ The final data is saved in  `./resources`. including the train/val/test data.
 
 We provide the final processed data of UCI for running our model.
 
-## Train the model 
+# Train the model 
 
 `bash train_UCI_13.sh`
 
