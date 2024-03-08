@@ -67,3 +67,12 @@ During training, the following output files are generated:
 
 `bash eval_single_step.py`
 
+# Citation
+```
+@article{wu2024feasibility,
+  title={On the Feasibility of Simple Transformer for Dynamic Graph Modeling},
+  author={Wu, Yuxia and Fang, Yuan and Liao, Lizi},
+  journal={arXiv preprint arXiv:2401.14009},
+  year={2024}
+}
+```
