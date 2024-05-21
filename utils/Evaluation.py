@@ -1,6 +1,4 @@
-#coding: utf-8
-# author: lu yf
-# create date: 2019-11-27 13:14
+
 import math
 import numpy as np
 import sklearn
@@ -105,6 +103,7 @@ def get_eval_metrics(args, model, tokenizer, step, mode = "val"):
         tokens_tensor = tokens_tensor.to('cuda')
         predicted_index = []
         len_input = len(indexed_tokens)
+	gen_len = 0
         while predicted_index not in break_tokens:
             outputs = model(tokens_tensor)
             predictions = outputs[0]
@@ -114,17 +113,16 @@ def get_eval_metrics(args, model, tokenizer, step, mode = "val"):
             predicted_text = tokenizer.decode(indexed_tokens)
             
             tokens_tensor = torch.tensor([indexed_tokens]).to('cuda')
-            if args.dataset=="UCI_13":
-                if len(indexed_tokens) >= 100:
+            gen_len +=1
+            if mode == 'val':
+                if gen_len>10:
                     break
             else:
-                if len(indexed_tokens) >= 500: #MAX_LEN-len(spl_tokens):
+                if len(indexed_tokens) >= MAX_LEN-len(spl_tokens):
                     break
 
             if tokenizer.decode(indexed_tokens).endswith('<|endoftext|>'):
                 break
-            #if tokenizer.decode(indexed_tokens).endswith('[PAD]'):
-                #break 
 
         predicted_text = tokenizer.decode(indexed_tokens)
         predicted_list = predicted_text.split()
