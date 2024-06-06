@@ -69,10 +69,12 @@ During training, the following output files are generated:
 
 # Citation
 ```
-@article{wu2024feasibility,
+@inproceedings{wu2024feasibility,
   title={On the Feasibility of Simple Transformer for Dynamic Graph Modeling},
   author={Wu, Yuxia and Fang, Yuan and Liao, Lizi},
-  journal={arXiv preprint arXiv:2401.14009},
+  booktitle={Proceedings of the ACM on Web Conference 2024},
+  pages={870--880},
   year={2024}
 }
+
 ```
