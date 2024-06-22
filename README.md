@@ -25,7 +25,7 @@ The package can be installed by running the following command.
 
 - MMConv: we provide the raw data downloaded from https://github.com/liziliao/MMConv. It is a text-based multi-turn dialog dataset. We preprocess the data by representing the dialog as a graph for each turn based on the annotated attributes. We provide the preprocessed data in `all/data/dialog`
 
-## Let's do preprocessing! 
+## Let's do preprocessing!  
 
 All the datasets and preprocessing code are in folder `/all_data`. For each dataset, run:
 
@@ -42,9 +42,9 @@ Transfer the preprocessed data into sequences for the Transformer model:
 
 `bash csv2res.sh`
 
-The final data is saved in  `./resources`. including the train/val/test data.
+The final data is saved in  `./resources`, including the train/val/test data.
 
-We provide the final processed data of UCI for running our model.
+**We provide the final processed data for running our model.**
 
 # Train the model 
 
