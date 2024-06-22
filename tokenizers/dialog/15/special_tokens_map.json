@@ -1,0 +1,27 @@
+{
+  "additional_special_tokens": [
+    "<|history|>",
+    "<|endofhistory|>",
+    "<|pre|>",
+    "<|endofpre|>",
+    "<|time0|>",
+    "<|time1|>",
+    "<|time2|>",
+    "<|time3|>",
+    "<|time4|>",
+    "<|time5|>",
+    "<|time6|>",
+    "<|time7|>",
+    "<|time8|>",
+    "<|time9|>",
+    "<|time10|>",
+    "<|time11|>",
+    "<|time12|>",
+    "<|time13|>",
+    "<|time14|>",
+    "<|time15|>"
+  ],
+  "bos_token": "<|endoftext|>",
+  "eos_token": "<|endoftext|>",
+  "pad_token": "[PAD]"
+}
