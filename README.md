@@ -15,7 +15,11 @@ The package can be installed by running the following command.
 
 `pip install -r requirements.txt`
 
-# Benchmark Datasets and Preprocessing
+# Benchmark Datasets and Preprocessing (Optional)
+
+You can download the raw datasets and run the preprocessing by yourself. 
+
+Or you can run the training directly using the preprocessed data in `./resources`
 
 ## Raw data:
 
