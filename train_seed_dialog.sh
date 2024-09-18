@@ -1,5 +1,5 @@
 #!/bin/bash
-for Timestamp in {15..15} 
+for Timestamp in 15 
 do
     for batch_size in 32
     do
