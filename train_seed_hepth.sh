@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for Timestamp in {11..11} 
+for Timestamp in 11 
 do
     for batch_size in 32  
     do
