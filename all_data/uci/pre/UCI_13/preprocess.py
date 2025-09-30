@@ -1,4 +1,3 @@
-import dill
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -15,6 +14,7 @@ ctr = 0
 node_cnt = 0
 node_idx = {}
 idx_node = []
+
 
 with open('./out.opsahl-ucsocial') as f:
     lines = f.read().splitlines()
@@ -111,6 +111,8 @@ def remap(slices_graph, slices_features):
     for slice_id in slices_graph:
         assert len(slices_graph[slice_id].nodes()) == len(slices_features[slice_id])
         all_nodes.extend(slices_graph[slice_id].nodes())
+    # if 3 in all_nodes:
+    #     print('Yes')
     all_nodes = list(set(all_nodes))
     print ("Total # nodes", len(all_nodes), "max idx", max(all_nodes))
     ctr = 0
@@ -134,18 +136,36 @@ def remap(slices_graph, slices_features):
         assert (len(G.edges()) == len(slices_graph[slice_id].edges()))
         slices_graph_remap.append(G)
     
+    import time
+    start_time = time.time()
     for slice_id in slices_features:
         features_remap = []
+        row_idx_lst = []
+        col_idx_lst = []
+        value_lst = []
+
         for x in slices_graph_remap[slice_id].nodes():
-            features_remap.append(slices_features[slice_id][idx_node[x]])
-            #features_remap.append(np.array(slices_features[slice_id][idx_node[x]]).flatten())
-        features_remap = csr_matrix(np.squeeze(np.array(features_remap)))
+            # 找出非零元素并储存index，用(x, index)定位元素位置，元素值也一并存储，不存储稠密矩阵
+            row_idx = np.nonzero(slices_features[slice_id][idx_node[x]])[0]
+            row_idx_lst = np.concatenate((row_idx_lst, row_idx))
+            value = slices_features[slice_id][idx_node[x]][row_idx]
+            value_lst = np.concatenate((value_lst, value))
+            col_idx = np.repeat(x, len(row_idx))
+            col_idx_lst = np.concatenate((col_idx_lst, col_idx))
+        
+        len_feature = len(slices_features[slice_id][idx_node[x]])
+        features_remap = csr_matrix((value_lst, (row_idx_lst, col_idx_lst)), shape=(len(row_idx_lst), len_feature))
         slices_features_remap.append(features_remap)
+    end_time = time.time()
+    run_time = end_time - start_time
+    print("run_time:", run_time)
+
     return (slices_graph_remap, slices_features_remap, node_idx, idx_node)
-
+print('Remapping... ')
 slices_links_remap, slices_features_remap, node_idx, idx_node = remap(slices_links, slices_features)
-
+print('Remap done!')
 graphs = slices_links_remap
+print('Writing the ori csv... ')
 with open('UCI_13_ori.csv', 'w') as f:
     f.write('user_id,item_id,timestamp,ori_time, state_label,comma_separated_list_of_features\n')
     
@@ -159,9 +179,11 @@ with open('UCI_13_ori.csv', 'w') as f:
             timestamp = int(timestamp)
             f.write('%d,%d,%d,%d,0,0\n'%(user, item, timestamp, ori_time))
             f.write('%d,%d,%d,%d, 0,0\n'%(item, user, timestamp, ori_time))
+print('Writing done')
 
 data = pd.read_csv('UCI_13_ori.csv')
 data['ori_time'] = (data['ori_time'] - data['ori_time'].min()) / (data['ori_time'].max() - data['ori_time'].min())
+print('Sorting ... ')
 data = data.sort_values(by=['ori_time'])
 data.to_csv('UCI_13.csv', index=False)
 for i, timestamp in data.groupby('timestamp'):
