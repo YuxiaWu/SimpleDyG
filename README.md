@@ -1,3 +1,5 @@
+
+
 # SimpleDyG
 
 The code and datasets used for our paper "On the Feasibility of Simple Transformer for Dynamic Graph Modeling" which is accepted by WWW 2024.
@@ -69,7 +71,7 @@ During training, the following output files are generated:
 
 # Evaluation 
 
-`bash eval_single_step.py`
+`python eval_single_step.py`
 
 # Citation
 ```
